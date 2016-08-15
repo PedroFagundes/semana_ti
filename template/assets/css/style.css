@@ -4460,7 +4460,7 @@ button.btn.btn-block {
 }
 .registration-form {
   margin: 0 auto;
-  max-width: 370px;
+  /* max-width: 370px; */
   background-color: #ffffff;
 }
 .registration-form-alt {

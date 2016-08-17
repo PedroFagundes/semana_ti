@@ -12,13 +12,13 @@
 		<meta name="keywords" content="PSD, HTML5, CSS3">
 		<meta name="author" content="Vivaco">
 
-		<link rel="shortcut icon" href="assets/img/favicon.ico">
-		<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.jpg">
-		<link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.jpg">
-		<link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.jpg">
+		<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+		<link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.jpg' %}">
+		<link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/apple-touch-icon-72x72.jpg' %}">
+		<link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/apple-touch-icon-114x114.jpg' %}">
 
-		<link rel="stylesheet" type="text/css" href="assets/css/custom-animations.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/custom-animations.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
 
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.js"></script>
@@ -118,23 +118,23 @@
 				<div class="tabs-wrapper tabs-horizontal">
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#horizontal_tab1" data-toggle="tab">
-							<h6 class="heading-alt"><span class="fa fa-code"></span> General info</h6>
+							<h6 class="heading-alt"><span class="fa fa-code"></span> Sobre o Evento</h6>
 						</a></li>
 						<li><a href="#horizontal_tab2" data-toggle="tab">
-							<h6 class="heading-alt"><span class="fa fa-rocket"></span> Workshops</h6>
+							<h6 class="heading-alt"><span class="fa fa-rocket"></span> Justificativa</h6>
 						</a></li>
 						<li><a href="#horizontal_tab3" data-toggle="tab">
-							<h6 class="heading-alt"><span class="fa fa-external-link"></span> Sponsor info</h6>
+							<h6 class="heading-alt"><span class="fa fa-external-link"></span> Objetivo</h6>
 						</a></li>
 					</ul>
 
 					<div class="tab-content">
 						<div id="horizontal_tab1" class="tab-pane fade active in">
 							<div class="col-sm-5 img-column">
-								<img src="assets/img/imac-371x412.png" alt="" class="img-responsive" />
+								<img src="{% static 'img/imac-371x412.png' %}" alt="" class="img-responsive" />
 							</div>
 							<div class="col-sm-7 align-left">
-								<h6>About event</h6>
+								<h6>Sobre o evento</h6>
 								<p>Faucibus sed pretium. Ridiculus <strong>consectetuer</strong> et. In arcu enim sit in libero scelerisque mauris sed. Nullam eleifend in varius arcu vitae feugiat magna id ut morbi consectetuer. In vivamus arcu. Id ut dui. Sed massa in. Scelerisque suscipit quisque maecenas aliquet in. Wisi mi ipsum. Elit et mauris. Duis in magni praesent <a href="#">content</a> massa.</p>
 								<p>Consectetuer amet wisi felis sem <strong>tincidunt</strong>. Ultricies blandit id euismod inceptos mauris pulvinar nec nullam quisque consequat nulla eleifend elementum vivamus aliquam placerat nec. Vehicula leo praesent vitae leo mauris ullamcorper lectus sed mollis id turpis dui cras suspendisse. Porta diam <a href="#">eleifend</a>. Praesent magnis sit. Enim ligula vel justo urna.</p>
 								<ul>
@@ -147,7 +147,7 @@
 
 						<div id="horizontal_tab2" class="tab-pane fade">
 							<div class="col-sm-7 align-right">
-								<h6>Workshops</h6>
+								<h6>Justificativa</h6>
 								<p>Faucibus sed pretium. Ridiculus <strong>consectetuer</strong> et. In arcu enim sit in libero scelerisque mauris sed. Nullam eleifend in varius arcu vitae feugiat magna id ut morbi consectetuer. In vivamus arcu. Id ut dui. Sed massa in. Scelerisque suscipit quisque maecenas aliquet in. Wisi mi ipsum. Elit et mauris. Duis in magni praesent <a href="#">content</a> massa.</p>
 								<p>Consectetuer amet wisi felis sem <strong>tincidunt</strong>. Ultricies blandit id euismod inceptos mauris pulvinar nec nullam quisque consequat nulla eleifend elementum vivamus aliquam placerat nec. Vehicula leo praesent vitae leo mauris ullamcorper lectus sed mollis id turpis dui cras suspendisse. Porta diam <a href="#">eleifend</a>. Praesent magnis sit. Enim ligula vel justo urna.</p>
 								<ul>
@@ -158,16 +158,16 @@
 							</div>
 
 							<div class="col-sm-5 img-column">
-								<img src="assets/img/imac-371x412.png" alt="" class="img-responsive" />
+								<img src="{% static 'img/imac-371x412.png' %}" alt="" class="img-responsive" />
 							</div>
 						</div>
 
 						<div id="horizontal_tab3" class="tab-pane fade">
 							<div class="col-sm-5 img-column">
-								<img src="assets/img/imac-371x412.png" alt="" class="img-responsive" />
+								<img src="{% static 'img/imac-371x412.png' %}" alt="" class="img-responsive" />
 							</div>
 							<div class="col-sm-7 align-left">
-								<h6>Sponsors apply</h6>
+								<h6>Objetivo</h6>
 								<p>Faucibus sed pretium. Ridiculus <strong>consectetuer</strong> et. In arcu enim sit in libero scelerisque mauris sed. Nullam eleifend in varius arcu vitae feugiat magna id ut morbi consectetuer. In vivamus arcu. Id ut dui. Sed massa in. Scelerisque suscipit quisque maecenas aliquet in. Wisi mi ipsum. Elit et mauris. Duis in magni praesent <a href="#">content</a> massa.</p>
 								<ul>
 									<li>Nisl cras vitae wisi odio amet.</li>
@@ -1172,7 +1172,7 @@
 
 		</section>
 
-		<section id="sign_up" class="section bg-cover overlay bg4 light-text align-center">
+		<!-- <section id="sign_up" class="section bg-cover overlay bg4 light-text align-center">
 			<div class="container">
 				<h2><span class="highlight">Newsletter</span> Sign Up</h2>
 				<small>No Spam - Only latest news, price and activity updates</small>
@@ -1297,16 +1297,16 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<section id="register" class="section overlay overlay-clr bg-cover bg4 light-text align-center">
 			<div class="container">
-				<h2>Register to Ventcamp now!</h2>
+				<h2>Faça já sua inscrição!</h2>
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting <br /> industry. took a galley of type and scrambled it to make a type.</p>
 				<br />
 				<br />
 
-				<a href="#" class="btn btn-lg btn-outline">Register</a>
+				<a href="#" class="btn btn-lg btn-outline" data-modal-link="registration">Inscreva-se</a>
 			</div>
 		</section>
 
@@ -1533,38 +1533,38 @@
 				<br/>
 
 				<div class="sponsors">
-					<div class="sponsor big"><img src="assets/img/sponsors/sponsor-big-1.png" alt=""></div>
-					<div class="sponsor big"><img src="assets/img/sponsors/sponsor-big-2.png" alt=""></div>
-					<div class="sponsor big"><img src="assets/img/sponsors/sponsor-big-3.png" alt=""></div>
-					<div class="sponsor big"><img src="assets/img/sponsors/sponsor-big-4.png" alt=""></div>
+					<div class="sponsor big"><img src="{% static 'img/sponsors/sponsor-big-1.png' %}" alt=""></div>
+					<div class="sponsor big"><img src="{% static 'img/sponsors/sponsor-big-2.png' %}" alt=""></div>
+					<div class="sponsor big"><img src="{% static 'img/sponsors/sponsor-big-3.png' %}" alt=""></div>
+					<div class="sponsor big"><img src="{% static 'img/sponsors/sponsor-big-4.png' %}" alt=""></div>
 				</div>
 
 				<div class="sponsors">
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor1.png" alt=""></div>
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor2.png" alt=""></div>
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor3.png" alt=""></div>
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor4.png" alt=""></div>
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor5.png" alt=""></div>
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor6.png" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor1.png' %}" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor2.png' %}" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor3.png' %}" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor4.png' %}" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor5.png' %}" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor6.png' %}" alt=""></div>
 				</div>
 				<div class="sponsors">
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor9.png" alt=""></div>
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor10.png" alt=""></div>
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor1.png" alt=""></div>
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor2.png" alt=""></div>
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor3.png" alt=""></div>
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor4.png" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor9.png' %}" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor10.png' %}" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor1.png' %}" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor2.png' %}" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor3.png' %}" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor4.png' %}" alt=""></div>
 				</div>
 				<div class="sponsors">
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor5.png" alt=""></div>
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor6.png" alt=""></div>
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor7.png" alt=""></div>
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor3.png" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor5.png' %}" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor6.png' %}" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor7.png' %}" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor3.png' %}" alt=""></div>
 				</div>
 
 				<div class="sponsors">
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor2.png" alt=""></div>
-					<div class="sponsor inline"><img src="assets/img/sponsors/sponsor1.png" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor2.png' %}" alt=""></div>
+					<div class="sponsor inline"><img src="{% static 'img/sponsors/sponsor1.png' %}" alt=""></div>
 				</div>
 
 			</div>
@@ -1675,46 +1675,57 @@
 		</section>
 
 		<div class="modal-window" data-modal="registration" style="background-color: rgba(2, 2, 2, 0.85);">
-			<div class="modal-box medium animated" data-animation="zoomIn" data-duration="700">
+			<div class="modal-box large animated" data-animation="zoomIn" data-duration="700">
 				<span class="close-btn icon icon-office-52"></span>
 
 				<h5 class="align-center"><span class="highlight">Inscrição</span></h5>
 
-				<form class="form registration-form align-center">
+				<form class="form registration-form align-center" method="POST">
+					{% csrf_token %}
 
 					<h5 class="align-left"><small>Dados pessoais</small></h5>
 
 					<div class="row">
 						<fieldset class="col-sm-6">
 							<label for="first_name">Nome Completo</label>
-							<input id="first_name" name="first_name" type="text">
+							<!-- <input id="first_name" name="first_name" type="text"> -->
+							{{ form.name }}
+							{{ form.errors.name }}
 						</fieldset>
 
 						<fieldset class="col-sm-3">
 							<label for="last_name">CPF</label>
-							<input id="last_name" name="last_name" type="text">
+							<!-- <input id="last_name" name="last_name" type="text"> -->
+							{{ form.cpf }}
+							{{ form.errors.cpf }}
 						</fieldset>
 						<fieldset class="col-sm-3">
 							<label for="email">E-mail</label>
-							<input id="email" name="email" type="email">
+							<!-- <input id="email" name="email" type="email"> -->
+							{{ form.email }}
+							{{ form.errors.email }}
 						</fieldset>
 					</div>
 
 					<div class="row">
 						<fieldset class="col-sm-3">
 							<label for="email">Nº Celular</label>
-							<input id="email" name="email" type="email">
+							<!-- <input id="email" name="email" type="email"> -->
+							{{ form.phone }}
+							{{ form.errors.phone }}
 						</fieldset>
 
 						<fieldset class="col-sm-3">
 							<label for="pass1">Você é</label>
-							<select id="pass1" name="pass1">
+							{{ form.person_type }}
+							{{ form.errors.person_type }}
+							<!-- <select id="pass1" name="pass1">
 								<option value="" selected disabled>-- Selecione --</option>
 								<option value="0">Acadêmico FASA</option>
 								<option value="1">Egresso</option>
 								<option value="2">Professor</option>
 								<option value="3">Outro</option>
-							</select>
+							</select> -->
 						</fieldset>
 
 						<fieldset class="col-sm-3">
@@ -1732,23 +1743,34 @@
 					
 
 					<div class="row">
-						<fieldset class="col-sm-6">
-							<label for="pass2"># tickets</label>
-							<select id="pass2" name="pass2">
-								<option value="a">Variant A</option>
-								<option value="b">Variant B</option>
-								<option value="c">Variant C</option>
-								<option value="d">Variant D</option>
-								<option value="e">Variant E</option>
-								<option value="f" disabled>Variant F</option>
-								<option value="g">Variant G</option>
-								<option value="h">Variant H</option>
-								<option value="i">Variant I</option>
-								<option value="j">Variant J</option>
-								<option value="k">Variant K</option>
-								<option value="l">Variant L</option>
-								<option value="m">Variant M</option>
-							</select>
+						<fieldset class="col-sm-12">
+							<p class="align-left"><b>26/09/2016 à 30/09/2016</b></p>
+							<input type="checkbox" name="event" id="event">
+							<label for="event">IV Semana de Tecnologia da Informação</label>
+						</fieldset>
+						<fieldset class="col-sm-12">
+							<p class="align-left"><b>27/09/2016</b></p>
+							<input type="radio" id="lecture-1" name="lecture-1">
+							<label for="lecture-1">Curso I (19:10h às 22:40h) - R$30</label>
+							<br>
+							<input type="radio" id="lecture-2" name="lecture-2">
+							<label for="lecture-2">Curso II (19:10h às 22:40h) - R$30</label>
+						</fieldset>
+						<fieldset class="col-sm-12">
+							<p class="align-left"><b>28/09/2016</b></p>
+							<input type="radio" id="lecture-3" name="lecture-3">
+							<label for="lecture-3">Curso III (19:10h às 22:40h) - R$30</label>
+							<br>
+							<input type="radio" id="lecture-4" name="lecture-4">
+							<label for="lecture-4">Curso IV (19:10h às 22:40h) - R$30</label>
+						</fieldset>
+						<fieldset class="col-sm-12">
+							<p class="align-left"><b>29/09/2016</b></p>
+							<input type="radio" id="lecture-5" name="lecture-5">
+							<label for="lecture-5">Curso V (19:10h às 22:40h) - R$30</label>
+							<br>
+							<input type="radio" id="lecture-6" name="lecture-6">
+							<label for="lecture-6">Curso VI (19:10h às 22:40h) - R$30</label>
 						</fieldset>
 
 						<!-- <fieldset class="col-sm-12">
@@ -1768,19 +1790,19 @@
 			<script type="text/javascript" src="{% static 'js/jquery-1.11.3.min.js?ver=1"></script' %}>
 		<![endif]-->
 		<!--[if (gte IE 9) | (!IE)]><!-->
-			<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js?ver=1"></script>
+			<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
 		<!--<![endif]-->
 
 		<script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
-		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.validate.min %}"></script>
-		<script type="text/javascript" src="assets/js/toastr.min.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.waypoints.min %}"></script>
-		<script type="text/javascript" src="assets/js/jquery.appear.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.plugin.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.countTo.js"></script>
-		<script type="text/javascript" src="assets/js/masonry.pkgd.min"></script>
-		<script type="text/javascript" src="assets/js/modal-box.js"></script>
-		<script type="text/javascript" src="assets/js/ventcamp.js"></script>
+		<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.validate.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/toastr.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.appear.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.plugin.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.countTo.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/modal-box.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/ventcamp.js' %}"></script>
 	</body>
 	</html>

@@ -21,6 +21,7 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
 
 		<link rel="stylesheet" type="text/css" href="{% static 'vendor/icheck-1.x/skins/minimal/minimal.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'vendor/multiselect/css/multi-select.css' %}"/>
 
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.js"></script>
@@ -29,9 +30,9 @@
 	</head>
 
 	<body>
-		<div class="preloader-mask">
+		<!-- <div class="preloader-mask">
 			<div class="preloader"></div>
-		</div>
+		</div> -->
 
 		<section id="hero" class="hero-section bg1 bg-cover window-height light-text">
 			<ul class="socials-nav">
@@ -47,9 +48,9 @@
 					<h5 class="heading-alt" style="margin-bottom: 8px;"><span class="fa fa-calendar-o base-clr-txt"></span>26 a 30 de Set <!-- <span class="fa fa-map-marker base-clr-txt" style="margin-left: 14px;"></span>, NY--></h5>
 					<h6 class="thin base-font">IV Semana de tecnologia da</h6>
 					<h1 class="extra-heading">Informação</h1>
-					<h6 class="thin base-font">Massive conference about <strong>web developement</strong></h6>
+					<h6 class="thin base-font"><i class="fa fa-heart" aria-hidden="true"></i> Saúde com Tecnologia <i class="fa fa-laptop" aria-hidden="true"></i></h6>
 					<div class="btns-container">
-						<a href="#" class="btn btn-md" data-modal-link="registration">INSCREVA-SE</a>
+						<a class="btn btn-md" data-modal-link="registration">INSCREVA-SE</a>
 					</div>
 				</div>
 			</div>
@@ -59,9 +60,9 @@
 			<div class="header-wrapper">
 				<div class="container">
 					<div class="col-sm-2 col-xs-12 navigation-header">
-						<a href="#" class="logo">
-							<img src="assets/img/ventcamp_logo.png" alt="VentCamp" width="119" height="17" class="retina-hide">
-							<img src="assets/img/ventcamp_logo@2x.png" alt="VentCamp" width="119" height="17" class="retina-show">
+						<a href="{% url 'home' %}" class="logo">
+							<img src="{% static 'img/ventcamp_logo.png' %}" alt="VentCamp" width="130" height="60" class="retina-hide">
+							<img src="{% static 'img/ventcamp_logo@2x.png' %}" alt="VentCamp" width="130" height="60" class="retina-show">
 						</a>
 						<button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-controls="navigation">
 							<span class="icon-bar"></span>
@@ -113,7 +114,7 @@
 			<div class="container">
 				<span class="icon section-icon icon-multimedia-12"></span>
 				<h3>IV Semana de tecnologia da INFORMAÇÃO</h3>
-				<p class="text-alt">Starting your own IT business and picking right niche in less then <span class="highlight">30 days</span></p>
+				<p class="text-alt">Serão <span class="highlight">5 dias</span> de muita ação e informação, integrando o melhor da <b class="text-danger">Saúde</b> com a <b class="text-primary">Tecnologia</b></p>
 				<br />
 				<br />
 
@@ -133,49 +134,32 @@
 					<div class="tab-content">
 						<div id="horizontal_tab1" class="tab-pane fade active in">
 							<div class="col-sm-5 img-column">
-								<img src="{% static 'img/imac-371x412.png' %}" alt="" class="img-responsive" />
+								<img src="http://beecoffee.com.br/svr/servico/fasa/assets/img/data.png" alt="" class="img-responsive" />
 							</div>
 							<div class="col-sm-7 align-left">
 								<h6>Sobre o evento</h6>
-								<p>Faucibus sed pretium. Ridiculus <strong>consectetuer</strong> et. In arcu enim sit in libero scelerisque mauris sed. Nullam eleifend in varius arcu vitae feugiat magna id ut morbi consectetuer. In vivamus arcu. Id ut dui. Sed massa in. Scelerisque suscipit quisque maecenas aliquet in. Wisi mi ipsum. Elit et mauris. Duis in magni praesent <a href="#">content</a> massa.</p>
-								<p>Consectetuer amet wisi felis sem <strong>tincidunt</strong>. Ultricies blandit id euismod inceptos mauris pulvinar nec nullam quisque consequat nulla eleifend elementum vivamus aliquam placerat nec. Vehicula leo praesent vitae leo mauris ullamcorper lectus sed mollis id turpis dui cras suspendisse. Porta diam <a href="#">eleifend</a>. Praesent magnis sit. Enim ligula vel justo urna.</p>
-								<ul>
-									<li>Nisl cras vitae wisi odio amet.</li>
-									<li>Lacus amet vestibulum belas</li>
-									<li>Quis nunc curabitur assumenda</li>
-								</ul>
+								<p>Com o <b>II CONGRESSO NORTE MINEIRO DE ENFERMAGEM</b> E <b>IV SEMANA DE TECNOLOGIA DA INFORMAÇÃO</b>, espera-se discutir os efeitos da TI e dos Sistemas de Informação nas organizações, serviços e cuidados em <b class="text-danger">saúde</b>, o que proporciona um caráter especial a esta edição. Haverá a presença de pesquisadores e profissionais com experiência na área permitindo com isso a integração entre a comunidade acadêmica e profissional, ampliando o interesse na pesquisa, no compartilhamento de informações atualizadas e das práticas utilizadas no mercado. Neste contexto, a coordenação acadêmica do curso de graduação em Enfermagem e Sistemas de Informação, apresenta o temário do <b>II CONGRESSO NORTE MINEIRO DE ENFERMAGEM</b> E <b>IV SEMANA DE TECNOLOGIA DA INFORMAÇÃO</b> "O uso da <b class="text-primary">tecnologia</b> da informação no cuidado em <b class="text-danger">saúde</b>: aplicabilidade e desafios". Na perceptiva, de apresentar uma programação científica referenciada na concepção metodológica da participação ativa e da construção compartilhada do conhecimento, as atividades serão desenvolvidas por meio de um conjunto de espaços dentre os quais destacamos: conferências, plenárias, mesas redondas, rodas de conversa, relatos de experiência, hackathon, minicursos, oficinas, apresentação de trabalhos e pôsteres e feira de exposição tecnológica. Profissionais e acadêmicos de enfermagem e sistemas de informação, sentem-se entusiasmados por estarem na organização deste Congresso, por poderem oferecer aos participantes um espaço de reflexão crítica, troca de experiências, saberes e práticas e a promoção de integração para que cada congressista viva uma experiência única e compartilhe conosco desta construção.</p>
 							</div>
 						</div>
 
 						<div id="horizontal_tab2" class="tab-pane fade">
 							<div class="col-sm-7 align-right">
 								<h6>Justificativa</h6>
-								<p>Faucibus sed pretium. Ridiculus <strong>consectetuer</strong> et. In arcu enim sit in libero scelerisque mauris sed. Nullam eleifend in varius arcu vitae feugiat magna id ut morbi consectetuer. In vivamus arcu. Id ut dui. Sed massa in. Scelerisque suscipit quisque maecenas aliquet in. Wisi mi ipsum. Elit et mauris. Duis in magni praesent <a href="#">content</a> massa.</p>
-								<p>Consectetuer amet wisi felis sem <strong>tincidunt</strong>. Ultricies blandit id euismod inceptos mauris pulvinar nec nullam quisque consequat nulla eleifend elementum vivamus aliquam placerat nec. Vehicula leo praesent vitae leo mauris ullamcorper lectus sed mollis id turpis dui cras suspendisse. Porta diam <a href="#">eleifend</a>. Praesent magnis sit. Enim ligula vel justo urna.</p>
-								<ul>
-									<li>Nisl cras vitae wisi odio amet.</li>
-									<li>Lacus amet vestibulum belas</li>
-									<li>Quis nunc curabitur assumenda</li>
-								</ul>
+								<p>Com vistas aos avanços e crescimento da área de TI na nossa cidade, este evento tem como justificativa a necessidade de <b>novos conhecimentos</b> sobre as tendências e produtos atuais do mercado de <b class="text-primary">tecnologia</b>, além de permitir a integração de alunos, profissionais e empresas que possam transferir experiências e novos negócios. O evento também se justiça pela contribuição social ao realizar doações dos alimentos não-perecíveis arrecadados no ato da inscrição para instituições beneficentes (à definir). Além disso, o evento incentivará a produção cientifica com a apresentação dos resumos simples e apresentação oral, no evento, sendo uma importante forma de integração de alunos de diversos períodos.</p>
 							</div>
 
 							<div class="col-sm-5 img-column">
-								<img src="{% static 'img/imac-371x412.png' %}" alt="" class="img-responsive" />
+								<img src="http://beecoffee.com.br/svr/servico/fasa/assets/img/data.png" alt="" class="img-responsive" />
 							</div>
 						</div>
 
 						<div id="horizontal_tab3" class="tab-pane fade">
 							<div class="col-sm-5 img-column">
-								<img src="{% static 'img/imac-371x412.png' %}" alt="" class="img-responsive" />
+								<img src="http://beecoffee.com.br/svr/servico/fasa/assets/img/data.png" alt="" class="img-responsive" />
 							</div>
 							<div class="col-sm-7 align-left">
 								<h6>Objetivo</h6>
-								<p>Faucibus sed pretium. Ridiculus <strong>consectetuer</strong> et. In arcu enim sit in libero scelerisque mauris sed. Nullam eleifend in varius arcu vitae feugiat magna id ut morbi consectetuer. In vivamus arcu. Id ut dui. Sed massa in. Scelerisque suscipit quisque maecenas aliquet in. Wisi mi ipsum. Elit et mauris. Duis in magni praesent <a href="#">content</a> massa.</p>
-								<ul>
-									<li>Nisl cras vitae wisi odio amet.</li>
-									<li>Lacus amet vestibulum belas</li>
-									<li>Quis nunc curabitur assumenda</li>
-								</ul>
+								<p>Congregar todos os profissionais e acadêmicos da área da <b class="text-danger">saúde</b> e de <b class="text-primary">tecnologia</b> quer sejam da gestão, assistência, ensino ou pesquisa, como também aprimorar os conhecimentos na área de tecnologia e saúde, e fortalecer a construção acadêmica de modo a incentivar propostas e projetos inovadores nessas áreas. Permite ainda divulgar interna e externamente os cursos envolvidos, bem como a instituição.</p>
 							</div>
 						</div>
 					</div>
@@ -332,7 +316,7 @@
 				</div>
 
 				<div class="col-sm-12 align-center">
-					<a href="elements/speakers.html" target="_blank" class="btn btn-outline-clr btn-md">INSCREVA-SE</a>
+					<a class="btn btn-outline-clr btn-md" data-modal-link="registration">INSCREVA-SE</a>
 				</div>
 
 			</div>
@@ -342,7 +326,7 @@
 			<div class="container">
 				<span class="icon section-icon icon-office-21"></span>
 				<h3>Programação</h3>
-				<p class="text-alt">Vast number of different speeches<br/> and <span class="highlight">activities</span></p>
+				<p class="text-alt">Vasto número de palestras, mini-cursos e atividades.<br/> <span class="highlight">Escolha</span> suas preferidas e participe!</p>
 				<br />
 				<br />
 
@@ -1167,7 +1151,7 @@
 				<!-- Schedule end -->
 
 			<div class="col-sm-12 align-center">
-				<a href="elements/schedule.html" target="_blank" class="btn btn-outline-clr btn-md">FAÇA SUA INSCRIÇÃO</a>
+				<a class="btn btn-outline-clr btn-md" data-modal-link="registration">FAÇA SUA INSCRIÇÃO</a>
 			</div>
 
 			</div>
@@ -1574,7 +1558,7 @@
 
 		<section id="contacts">
 			<div class="contacts-wrapper">
-				<div id="contacts-map" class="map" data-settings="map-settings.json" style="height:560px;"></div>
+				<div id="contacts-map" class="map" data-settings="{% static 'map-settings.json' %}" style="height:560px;"></div>
 
 				<div class="container contacts-on-map-container">
 					<div class="contacts-on-map">
@@ -1669,7 +1653,7 @@
 							<li class="socials-nav-item"><a href="#"><span class="fa fa-instagram"></span></a></li>
 						</ul>
 
-						<p class="text-alt"><small>Made with <i class="fa fa-heart-o text-danger"></i> by <a href="#!">LiveLabs Soluções</a></small></p>
+						<p class="text-alt"><small>Made with <i class="fa fa-heart-o"></i> by <a href="http://www.livelabs.com.br" target="_blank">LiveLabs Soluções</a></small></p>
 					</div>
 
 				</div>
@@ -1746,35 +1730,17 @@
 					
 
 					<div class="row">
-						<fieldset class="col-sm-12">
+						<fieldset class="col-sm-6">
 							<p class="align-left"><b>26/09/2016 à 30/09/2016</b></p>
 							{{ form.event }}
 							{{ form.errors.event }}
-							<label for="id_event">IV Semana de Tecnologia da Informação</label>
+							<label for="id_event">IV Semana de Tecnologia da Informação - R$60,00</label>
 						</fieldset>
-						<fieldset class="col-sm-12">
-							<p class="align-left"><b>27/09/2016</b></p>
-							<input type="radio" id="lecture-1" name="lecture-1">
-							<label for="lecture-1">Curso I (19:10h às 22:40h) - R$30</label>
-							<br>
-							<input type="radio" id="lecture-2" name="lecture-2">
-							<label for="lecture-2">Curso II (19:10h às 22:40h) - R$30</label>
-						</fieldset>
-						<fieldset class="col-sm-12">
-							<p class="align-left"><b>28/09/2016</b></p>
-							<input type="radio" id="lecture-3" name="lecture-3">
-							<label for="lecture-3">Curso III (19:10h às 22:40h) - R$30</label>
-							<br>
-							<input type="radio" id="lecture-4" name="lecture-4">
-							<label for="lecture-4">Curso IV (19:10h às 22:40h) - R$30</label>
-						</fieldset>
-						<fieldset class="col-sm-12">
-							<p class="align-left"><b>29/09/2016</b></p>
-							<input type="radio" id="lecture-5" name="lecture-5">
-							<label for="lecture-5">Curso V (19:10h às 22:40h) - R$30</label>
-							<br>
-							<input type="radio" id="lecture-6" name="lecture-6">
-							<label for="lecture-6">Curso VI (19:10h às 22:40h) - R$30</label>
+
+						<fieldset class="col-sm-6">
+							<p class="align-left"><b>Selecione os minicursos que deseja participar</b></p>
+							{{ form.lecture }}
+							{{ form.errors.lecture }}
 						</fieldset>
 
 						<!-- <fieldset class="col-sm-12">
@@ -1784,7 +1750,12 @@
 						</fieldset> -->
 					</div>
 
-					<input type="submit" value="Enviar" class="btn pull-right">
+
+					<div class="row">
+						<fieldset class="col-sm-12">
+							<input type="submit" value="Enviar" class="btn pull-right m-t-15">
+						</fieldset>
+					</div>
 				</form>
 
 			</div>
@@ -1808,7 +1779,10 @@
 		<script type="text/javascript" src="{% static 'js/masonry.pkgd.min.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/modal-box.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/ventcamp.js' %}"></script>
+
 		<script type="text/javascript" src="{% static 'vendor/icheck-1.x/icheck.js' %}"></script>
+		<script type="text/javascript" src="{% static 'vendor/jquery.mask/jquery.mask.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'vendor/multiselect/js/jquery.multi-select.js' %}"></script>
 
 		<script>
 			$(document).ready(function(){
@@ -1830,6 +1804,11 @@
 					$("#registration-fieldset").show(500);
 				}
 			}
+
+			$('#id_phone').mask('(00) 00000-0000');
+			$('#id_cpf').mask('000.000.000-00');
+
+			$('#id_lecture').multiSelect()
 		</script>
 	</body>
 	</html>

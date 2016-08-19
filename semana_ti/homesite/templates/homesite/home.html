@@ -20,6 +20,8 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/custom-animations.css' %}"/>
 		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
 
+		<link rel="stylesheet" type="text/css" href="{% static 'vendor/icheck-1.x/skins/minimal/minimal.css' %}"/>
+
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.js"></script>
 			<script src="assets/js/respond.min.js"></script>
@@ -1674,7 +1676,7 @@
 			</div>
 		</section>
 
-		<div class="modal-window" data-modal="registration" style="background-color: rgba(2, 2, 2, 0.85);">
+		<div class="modal-window" data-modal="registration" id="registration-modal" style="background-color: rgba(2, 2, 2, 0.85);">
 			<div class="modal-box large animated" data-animation="zoomIn" data-duration="700">
 				<span class="close-btn icon icon-office-52"></span>
 
@@ -1728,9 +1730,10 @@
 							</select> -->
 						</fieldset>
 
-						<fieldset class="col-sm-3">
+						<fieldset class="col-sm-3" id="registration-fieldset">
 							<label for="email">Matrícula</label>
-							<input id="email" name="email" type="email">
+							{{ form.registration }}
+							{{ form.errors.registration }}
 						</fieldset>
 					</div>
 
@@ -1745,8 +1748,9 @@
 					<div class="row">
 						<fieldset class="col-sm-12">
 							<p class="align-left"><b>26/09/2016 à 30/09/2016</b></p>
-							<input type="checkbox" name="event" id="event">
-							<label for="event">IV Semana de Tecnologia da Informação</label>
+							{{ form.event }}
+							{{ form.errors.event }}
+							<label for="id_event">IV Semana de Tecnologia da Informação</label>
 						</fieldset>
 						<fieldset class="col-sm-12">
 							<p class="align-left"><b>27/09/2016</b></p>
@@ -1795,7 +1799,7 @@
 
 		<script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
 		<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/jquery.validate.min.js' %}"></script>
+		<!-- <script type="text/javascript" src="{% static 'js/jquery.validate.min.js' %}"></script> -->
 		<script type="text/javascript" src="{% static 'js/toastr.min.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/jquery.waypoints.min.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/jquery.appear.js' %}"></script>
@@ -1804,5 +1808,28 @@
 		<script type="text/javascript" src="{% static 'js/masonry.pkgd.min.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/modal-box.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/ventcamp.js' %}"></script>
+		<script type="text/javascript" src="{% static 'vendor/icheck-1.x/icheck.js' %}"></script>
+
+		<script>
+			$(document).ready(function(){
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_minimal',
+					radioClass: 'iradio_minimal',
+					increaseArea: '20%' // optional
+				});
+
+				if ($(".errorlist").length > 0) {
+					$('#registration-modal').modal('toggle');
+				}
+			});
+
+			function check_input () {
+				if ($("#id_person_type").val() != "Academico FASA") {
+					$("#registration-fieldset").hide(500);
+				} else {
+					$("#registration-fieldset").show(500);
+				}
+			}
+		</script>
 	</body>
 	</html>

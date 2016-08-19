@@ -8,3 +8,4 @@ class Home(CreateView):
 	template_name = 'homesite/home.html'
 	model = Subscription
 	form_class = SubscriptionForm
+	success_url = '/'

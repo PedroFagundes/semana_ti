@@ -4585,6 +4585,7 @@ select {
   height: 39px;
   cursor: pointer;
   outline: none;
+  border-color: #e8e8e8;
 }
 select option {
   padding: 2px 10px;
@@ -7269,4 +7270,8 @@ button[type="submit"] .loading {
     margin-bottom: 0;
     width: 100%;
   }
+}
+/* CUSTOM */
+.errorlist {
+  color: #ff5959;
 }

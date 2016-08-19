@@ -1660,6 +1660,12 @@
 			</div>
 		</section>
 
+		{% if messages %}
+			{% for message in messages %}
+				<span id="success-message" style="display:none;">{{ message }}</span>
+			{% endfor %}
+		{% endif %}
+
 		<div class="modal-window" data-modal="registration" id="registration-modal" style="background-color: rgba(2, 2, 2, 0.85);">
 			<div class="modal-box large animated" data-animation="zoomIn" data-duration="700">
 				<span class="close-btn icon icon-office-52"></span>
@@ -1795,6 +1801,28 @@
 				if ($(".errorlist").length > 0) {
 					$('#registration-modal').modal('toggle');
 				}
+
+
+
+				if ($("#success-message").length > 0) {
+
+					toastr.options = {
+						log: false,
+						styleSwitcher: true,
+						animations: true,
+						onePageNav: true,
+						alwaysMobileMenuMode: false,
+						mobileMenuMaxWidth: 768,
+						smoothScroll: false,
+						smoothScrollSpeed: 800,
+						pseudoSelect: true,
+						ajaxedForm: true,
+						toastrPositionClass: 'toast-top-full-width'
+					};
+
+					toastr["success"]("Inscrição realizada com sucesso! Faça o pagamento da inscrição para confirma-la");
+				}
+
 			});
 
 			function check_input () {

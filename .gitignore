@@ -4,3 +4,4 @@
 .pyc
 .bash_history
 */logs/*
+/*.sqlite3

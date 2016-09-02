@@ -1,7 +1,12 @@
+#Py caches
 /__pycache__/
 **/*.pyc[co]
 **/*.pyc
 .pyc
 .bash_history
 */logs/*
-/*.sqlite3
+bin/
+include/
+local
+lib/
+logs/

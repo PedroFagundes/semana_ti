@@ -10,3 +10,4 @@ include/
 local
 lib/
 logs/
+db.sqlite3

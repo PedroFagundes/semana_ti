@@ -6,10 +6,11 @@ from django.db import models
 
 
 class Lecture(models.Model):
-	title = models.CharField('Título do curso', max_length=50)
+	title = models.CharField('Título do curso', max_length=150)
 	date = models.DateField('Data')
 	hour = models.TimeField('Horário')
 	value = models.DecimalField('Valor', max_digits=9, decimal_places=2, validators=[MinValueValidator(0.00)])
+	vacancies = models.PositiveSmallIntegerField('Número de vagas')
 
 	class Meta:
 		verbose_name = 'Mini-curso'
@@ -17,6 +18,12 @@ class Lecture(models.Model):
 
 	def __unicode__(self):
 		return '[%s] %s - R$%.2f' % (self.date.strftime('%d/%m/%Y'), self.title, self.value)
+
+	def reached_max_subscriptions(self):
+		if len(Subscription.objects.filter(lecture=self)) >= self.vacancies:
+			return True
+		else:
+			return False
 
 
 class Subscription(models.Model):
@@ -40,7 +47,7 @@ class Subscription(models.Model):
 
 	event = models.BooleanField('Partcipar do evento', default=False)
 
-	lecture = models.ManyToManyField(Lecture, verbose_name='Mini-cursos',blank=True, null=True)
+	lecture = models.ManyToManyField(Lecture, verbose_name='Mini-cursos')
 
 	# day_1 = models.CharField()
 	# day_2 = models.CharField()

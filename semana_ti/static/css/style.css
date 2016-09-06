@@ -6993,9 +6993,7 @@ button[type="submit"] .loading {
     Theme styles
 ---------------------------------------------------------------------------- */
 .bg1 {
-  background-image: url("https://mail.google.com/mail/u/0/?ui=2&ik=a717d81453&view=fimg&th=156e26129af682e8&attid=0.1&disp=inline&realattid=f_isj0fdtj0&safe=1&attbid=ANGjdJ92L218tle6lDBDLXR6uSMWGxpe6Qo1qWGaHyX9p4p7tIAdjAMNBC6WBV3DvpBOiqXIVcRwVlYn5i7rj8octam0vFt534BQSuZH2h2cuGcXuL0RaZ_paOfSwAo&ats=1472841529549&rm=156e26129af682e8&zw&sz=w1319-h678");
-  background-size:contain;
-background-position:center;
+  background-image: url("../img/backgrounds/bg1.jpg");
 }
 .bg2 {
   background-image: url("../img/backgrounds/bg1.jpg");
@@ -7008,6 +7006,11 @@ background-position:center;
 }
 .bg5 {
   background-image: url("../img/backgrounds/bg5.jpg");
+}
+.bg6 {
+  background-image: url("../img/backgrounds/bg6.jpg");
+  background-size: contain;
+  background-position: center;
 }
 .bg1.overlay:before {
   opacity: 0.9;

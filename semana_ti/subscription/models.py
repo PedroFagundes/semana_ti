@@ -17,7 +17,7 @@ class Lecture(models.Model):
 		verbose_name_plural = 'Mini-cursos'
 
 	def __unicode__(self):
-		return '[%s] %s - R$%.2f' % (self.date.strftime('%d/%m/%Y'), self.title, self.value)
+		return '[%s] %s' % (self.date.strftime('%d/%m/%Y'), self.title)
 
 	def reached_max_subscriptions(self):
 		if len(Subscription.objects.filter(lecture=self)) >= self.vacancies:

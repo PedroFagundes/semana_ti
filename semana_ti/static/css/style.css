@@ -7300,3 +7300,11 @@ h3.name {
     min-height: 300px !important;
   }
 }
+.subscription-total {
+  background: transparent;
+  border: solid 1px red;
+  color: red !important;
+}
+.subscription-total:hover {
+  
+}

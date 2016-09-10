@@ -1848,6 +1848,7 @@
 
 					<div class="row">
 						<fieldset class="col-sm-12">
+							<!-- <span class="btn subscription-total m-t-15"><span id="subscription-total"></span></span> -->
 							<input type="submit" value="Enviar" class="btn pull-right m-t-15">
 						</fieldset>
 					</div>
@@ -1911,6 +1912,40 @@
 
 					toastr["success"]("Inscrição realizada com sucesso! Faça o pagamento da inscrição para confirma-la");
 				}
+
+				// Set TOTAL
+				// $("#subscription-total").text("TOTAL R$0,00");
+
+				// var eventInput = $(".iCheck-helper");
+
+				// var checaTotal = function () {
+				// 	console.log($("li.ms-selected").length);
+				// 	if (eventInput.parent().hasClass("checked")) {
+				// 		if ($("li.ms-selected").length == 0) {
+				// 			$("#subscription-total").text("TOTAL R$60,00");
+				// 		} else {
+				// 			$("#subscription-total").text("TOTAL R$" + (60 + (30 * ($("li.ms-selected").length - ($("li.ms-selected").length / 2)))).toString())
+				// 		}
+				// 	} else {
+				// 		if ($("li.ms-selected").length == 0) {
+				// 			$("#subscription-total").text("TOTAL R$0,00");
+				// 		} else {
+				// 			$("#subscription-total").text("TOTAL R$" + (30 * ($("li.ms-selected").length - ($("li.ms-selected").length / 2)))).toString()
+				// 		}
+				// 	}
+				// }
+
+				// eventInput.on("click", function() {
+				// 	checaTotal();
+				// });
+
+				// $("li.ms-elem-selectable").on("click", function() {
+				// 	checaTotal();
+				// });
+
+				// $("li.ms-elem-selection").on("click", function() {
+				// 	checaTotal();
+				// });
 
 			});
 

@@ -5766,6 +5766,7 @@ button[type="submit"] .loading {
 }
 .speaker .about {
   padding: 0 15px;
+  min-height: 250px;
 }
 .speaker .speaker-socials > li {
   padding: 0 10px;

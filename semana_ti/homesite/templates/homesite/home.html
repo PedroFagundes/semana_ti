@@ -1383,6 +1383,8 @@
 
 				<a href="{{ MEDIA_URL }}/media/programacao_normas.pdf" target="_blank" class="btn btn-lg btn-outline">Normas</a>
 				<a href="{{ MEDIA_URL }}/media/modelo_poster.pptx" target="_blank" class="btn btn-lg btn-outline">Modelo</a>
+				<br>
+				<br>
 				<a href="{{ MEDIA_URL }}/media/ii_hackathon_sistemas_de_informacao.pdf" target="_blank" class="btn btn-lg btn-outline">Regulamento Hackathon</a>
 			</div>
 		</section>
@@ -1828,7 +1830,7 @@
 							<p class="align-left"><b>26/09/2016 à 30/09/2016</b></p>
 							{{ form.event }}
 							{{ form.errors.event }}
-							<label for="id_event">IV Semana de Tecnologia da Informação - R$60,00</label>
+							<label for="id_event" id="label_event">IV Semana de Tecnologia da Informação</label>
 						</fieldset>
 
 						<fieldset class="col-sm-12 m-t-15">
@@ -1848,7 +1850,7 @@
 
 					<div class="row">
 						<fieldset class="col-sm-12">
-							<!-- <span class="btn subscription-total m-t-15"><span id="subscription-total"></span></span> -->
+							<span class="btn subscription-total m-t-15"><span id="subscription-total"></span></span>
 							<input type="submit" value="Enviar" class="btn pull-right m-t-15">
 						</fieldset>
 					</div>
@@ -1914,53 +1916,93 @@
 				}
 
 				// Set TOTAL
-				// $("#subscription-total").text("TOTAL R$0,00");
+				$("#subscription-total").text("TOTAL R$0,00");
 
-				// var eventInput = $(".iCheck-helper");
+				var eventInput = $(".iCheck-helper");
+				var label_event = $("#label_event");
 
-				// var checaTotal = function () {
-				// 	console.log($("li.ms-selected").length);
-				// 	if (eventInput.parent().hasClass("checked")) {
-				// 		if ($("li.ms-selected").length == 0) {
-				// 			$("#subscription-total").text("TOTAL R$60,00");
-				// 		} else {
-				// 			$("#subscription-total").text("TOTAL R$" + (60 + (30 * ($("li.ms-selected").length - ($("li.ms-selected").length / 2)))).toString())
-				// 		}
-				// 	} else {
-				// 		if ($("li.ms-selected").length == 0) {
-				// 			$("#subscription-total").text("TOTAL R$0,00");
-				// 		} else {
-				// 			$("#subscription-total").text("TOTAL R$" + (30 * ($("li.ms-selected").length - ($("li.ms-selected").length / 2)))).toString()
-				// 		}
-				// 	}
-				// }
+				var checaTotal = function () {
+					// se a inscrição no evento está selecionada
+					if (eventInput.parent().hasClass("checked")) {
+						// se não há nenhum minicurso selecionado
+						if ($("li.ms-selected").length == 0) {
+							if ($("#id_person_type").val() == 1) {
+								$("#subscription-total").text("TOTAL R$60,00");
+							}
+							else if ($("#id_person_type").val() == 2) {
+								$("#subscription-total").text("TOTAL R$65,00");
+							}
+							else {
+								$("#subscription-total").text("TOTAL R$80,00");
+							}
+							
+						}
+						// se há minicursos selecionados
+						else {
+							// se é acadêmico FASA
+							if ($("#id_person_type").val() == 1) {
+								$("#subscription-total").text("TOTAL R$" + (60 + (10 * ($("li.ms-selected").length - ($("li.ms-selected").length / 2)) - 10)) + ',00')
+							}
+							// se é acadêmico em outra instituição
+							else if ($("#id_person_type").val() == 2) {
+								$("#subscription-total").text("TOTAL R$" + (65 + (30 * ($("li.ms-selected").length - ($("li.ms-selected").length / 2)))) + ',00')
+							}
+							// se é profissional
+							else {
+								$("#subscription-total").text("TOTAL R$" + (80 + (30 * ($("li.ms-selected").length - ($("li.ms-selected").length / 2)))) + ',00')
+							}
+							
+						}
+					} else { // se a inscrição no evento não está selecionada
+						// se não há nenhum minicurso selecionado
+						if ($("li.ms-selected").length == 0) { 
+							$("#subscription-total").text("TOTAL R$0,00");
+						}
+						// se há minicursos selecionados
+						else {
+							// se é acadêmico FASA
+							if ($("#id_person_type").val() == 1) {
+								$("#subscription-total").text("TOTAL R$" + (30 * ($("li.ms-selected").length - ($("li.ms-selected").length / 2))) + ',00')
+							}
+							else if ($("#id_person_type").val() == 2) {
+								$("#subscription-total").text("TOTAL R$" + (30 * ($("li.ms-selected").length - ($("li.ms-selected").length / 2))) + ',00')
+							}
+							else {
+								$("#subscription-total").text("TOTAL R$" + (30 * ($("li.ms-selected").length - ($("li.ms-selected").length / 2))) + ',00')
+							}
+						}
+					}
+				}
 
-				// eventInput.on("click", function() {
-				// 	checaTotal();
-				// });
+				eventInput.on("click", function() {
+					checaTotal();
+				});
 
-				// $("li.ms-elem-selectable").on("click", function() {
-				// 	checaTotal();
-				// });
+				label_event.on("click", function() {
+					checaTotal();
+				});
 
-				// $("li.ms-elem-selection").on("click", function() {
-				// 	checaTotal();
-				// });
+				$('#id_phone').mask('(00) 00000-0000');
+				$('#id_cpf').mask('000.000.000-00');
 
+				$('#id_lecture').multiSelect({
+					afterSelect: function() {
+						checaTotal();
+					},
+					afterDeselect: function() {
+						checaTotal();
+					}
+				});
 			});
 
+
 			function check_input () {
-				if ($("#id_person_type").val() != "Academico FASA") {
+				if ($("#id_person_type").val() != 1) {
 					$("#registration-fieldset").hide(500);
 				} else {
 					$("#registration-fieldset").show(500);
 				}
-			}
-
-			$('#id_phone').mask('(00) 00000-0000');
-			$('#id_cpf').mask('000.000.000-00');
-
-			$('#id_lecture').multiSelect()
+			};
 		</script>
 	</body>
 	</html>

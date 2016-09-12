@@ -28,21 +28,16 @@ class Lecture(models.Model):
 
 class Subscription(models.Model):
 	PERSON_TYPE_CHOICES = {
-		('Academico FASA', 'Academico FASA'),
-		('Egresso', 'Egresso'),
-		('Professor', 'Professor'),
-		('Outro', 'Outro'),
-	}
-
-	LECTURE_CHOICES = {
-		(''),
+		('1', 'Acadêmico FASA'),
+		('2', 'Acadêmico outra instituição'),
+		('3', 'Profissional'),
 	}
 
 	name = models.CharField('Nome', max_length=80, blank=False, null=False)
 	cpf = models.CharField('CPF', max_length=14, blank=False, null=False)
 	email = models.EmailField('E-mail', unique=True, blank=False, null=False)
 	phone = models.CharField('Telefone', max_length=15, blank=False, null=False)
-	person_type = models.CharField('Tipo inscrito', max_length=15, choices=PERSON_TYPE_CHOICES, default='A', blank=False, null=False)
+	person_type = models.CharField('Tipo inscrito', max_length=15, choices=PERSON_TYPE_CHOICES, default='1', blank=False, null=False)
 	registration = models.CharField('Matrícula', max_length=6, blank=True, null=True)
 
 	event = models.BooleanField('Partcipar do evento', default=False)

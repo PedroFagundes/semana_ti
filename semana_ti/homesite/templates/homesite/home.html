@@ -1976,11 +1976,11 @@
 							}
 							// se é acadêmico em outra instituição
 							else if ($("#id_person_type").val() == 2) {
-								$("#subscription-total").text("TOTAL R$" + (65 + (30 * ($("li.ms-selected").length - ($("li.ms-selected").length / 2)))) + ',00')
+								$("#subscription-total").text("TOTAL R$" + (65 + (30 * ($("li.ms-selected").length - ($("li.ms-selected").length / 2)) - 30)) + ',00')
 							}
 							// se é profissional
 							else {
-								$("#subscription-total").text("TOTAL R$" + (80 + (30 * ($("li.ms-selected").length - ($("li.ms-selected").length / 2)))) + ',00')
+								$("#subscription-total").text("TOTAL R$" + (80 + (30 * ($("li.ms-selected").length - ($("li.ms-selected").length / 2)) - 30)) + ',00')
 							}
 							
 						}

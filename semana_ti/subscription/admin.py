@@ -6,7 +6,10 @@ from import_export.admin import ExportMixin
 
 from .models import Lecture, Subscription
 
-admin.site.register(Lecture)
+class LectureAdmin(admin.ModelAdmin):
+	list_display = ('title', 'get_subscriptions_total')
+
+admin.site.register(Lecture, LectureAdmin)
 
 class SubscriptionResource(resources.ModelResource):
 	class Meta:
@@ -17,5 +20,6 @@ class SubscriptionResource(resources.ModelResource):
 class SubscriptionAdmin(ExportMixin, admin.ModelAdmin):
 	list_display = ('name', 'email', 'phone', 'paid')
 	list_filter = ('person_type', 'event', 'lecture', 'paid')
+	search_fields = ('name',)
 
 admin.site.register(Subscription, SubscriptionAdmin)

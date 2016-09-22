@@ -25,6 +25,10 @@ class Lecture(models.Model):
 		else:
 			return False
 
+	def get_subscriptions_total(self):
+		return len(Subscription.objects.filter(lecture=self))
+	get_subscriptions_total.short_description = 'Quantidade de inscritos'
+
 
 class Subscription(models.Model):
 	PERSON_TYPE_CHOICES = {

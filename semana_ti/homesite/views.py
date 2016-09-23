@@ -20,7 +20,6 @@ class Home(SuccessMessageMixin, CreateView):
 
 def send_confirmation_mail_to_all(request):
 	subscriptions = Subscription.objects.all()[:5]
-	import pdb; pdb.set_trace()
 	for subscription in subscriptions:
 		html_message = render_to_string('mail/e-mail.html', {'subscription': subscription})
 		send_html_mail('Confirmacao de inscricao', html_message, ['pedrofagundesb@gmail.com'])

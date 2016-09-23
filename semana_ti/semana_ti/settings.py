@@ -16,7 +16,7 @@ SECRET_KEY = 'der**&5+$=lnjq1+-#%yzr-+q7_me5^t1^f#3mtq&01h9vzbia'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['saudecomti.santoagostinho.edu.br/']
+ALLOWED_HOSTS = ['159.104.203.224', 'saudecomti.santoagostinho.edu.br', 'http://saudecomti.santoagostinho.edu.br']
 
 
 # Application definition

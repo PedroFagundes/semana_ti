@@ -22,6 +22,6 @@ def send_confirmation_mail_to_all(request):
 	subscriptions = Subscription.objects.all() # [:5]
 	for subscription in subscriptions:
 		html_message = render_to_string('mail/e-mail.html', {'subscription': subscription})
-		send_html_mail('Confirmação de inscrição', html_message, [subscription.email,])
+		send_html_mail('Confirmação de inscrição', html_message, [subscription.email, 'pedro@livelabs.com.br'])
 	return HttpResponseRedirect(reverse_lazy('home'))
 

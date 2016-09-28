@@ -2,7 +2,7 @@
 /__pycache__/
 **/*.pyc[co]
 **/*.pyc
-.pyc
+*.pyc
 .bash_history
 */logs/*
 bin/
@@ -11,3 +11,4 @@ local
 lib/
 logs/
 db.sqlite3
+/migrations/

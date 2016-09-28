@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+	{% load static %}
+	<head>
+
+		<meta charset="utf-8">
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>Saúde com Tecnologia - II CONGRESSO NORTE MINEIRO DE ENFERMAGEM & IV SEMANA DE TECNOLOGIA DA INFORMAÇÃO</title>
+
+		<meta name="description" content="Saúde com Tecnologia - II CONGRESSO NORTE MINEIRO DE ENFERMAGEM & IV SEMANA DE TECNOLOGIA DA INFORMAÇÃO">
+		<meta name="keywords" content="congresso, saúde, tecnologia, TI, sistemas de informação, faculdades santo agostinho">
+		<meta name="author" content="Livelabs Soluções">
+
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'vendor/sweetalert/sweetalert2.css' %}" />
+
+		<!--[if lt IE 9]>
+			<script src="../assets/js/html5shiv.js"></script>
+			<script src="../assets/js/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body style="background:#262627;">
+
+	<section class="section align-center">
+		<div class="container">
+			<img src="{% static 'img/ventcamp_logo.png' %}" alt="">
+			<!-- <h3 class="heading-alt">ENTRADA</h5> -->
+			<div class="col-md-12">
+
+				{% if messages %}
+					{% for message in messages %}
+						{% if 'success' in message.tags %}
+							<span id="message-success" style="display:none;">{{ message }}</span>
+						{% elif 'warning' in message.tags %}
+							<span id="message-warning" style="display:none;">{{ message }}</span>
+						{% else %}
+							<span id="message-error" style="display:none;">{{ message }}</span>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+				
+			<!-- <p class="text-alt" style="margin-bottom: 0px;"><a href="{% url 'home' %}">Voltar</a></p> -->
+			</div>
+			<div class="col-md-6 col-md-offset-3">
+				<form method="POST">
+					{% csrf_token %}
+					<input name="cpf" class="cpf" type="text" placeholder="CPF" style="margin-top:70px;margin-bottom:70px;">
+				</form>
+			</div>
+		</div>
+	</section>
+
+
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="../assets/js/jquery-1.11.3.min.js?ver=1"></script>
+	<![endif]-->
+	<!--[if (gte IE 9) | (!IE)]><!-->
+		<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+	<!--<![endif]-->
+
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'vendor/sweetalert/sweetalert2.js' %}"></script>
+	<!-- <script type="text/javascript" src="{% static 'vendor/jquery.mask/jquery.mask.min.js' %}"></script> -->
+
+	<script>
+		$(document).ready(function() {
+			// $('.cpf').mask('000.000.000-00', {reverse: true});
+			$( '.cpf').focus();
+
+			if ($("#message-success").text() != "") {
+				swal({
+					  title: 'Bem-vindo!',
+					  html: $('<div>')
+					    .addClass('some-class')
+					    .text($("#message-success").text()),
+					  type: 'success',
+					  timer: 2000,
+					  onClose: function(){
+					  	$('body').css({'background': '#262627'});
+					  }
+				});
+				$('body').css({'background': '#a5dc86'});
+			}
+			else if ($("#message-warning").text() != "") {
+				swal({
+					  title: 'Aviso!',
+					  html: $('<div>')
+					    .addClass('some-class')
+					    .text($("#message-warning").text()),
+					  type: 'warning',
+					  timer: 3000,
+					  onClose: function(){
+					  	$('body').css({'background': '#262627'});
+					  }
+				});
+				$('body').css({'background': '#f8bb86'});
+			}
+			else if ($("#message-error").text() != "") {
+				swal({
+					  title: 'Ops!',
+					  html: $('<div>')
+					    .addClass('some-class')
+					    .text($("#message-error").text()),
+					  type: 'error',
+					  timer: 3000,
+					  onClose: function(){
+					  	$('body').css({'background': '#262627'});
+					  }
+				});
+				$('body').css({'background': '#f27474'});
+			};
+		})
+	</script>
+</body>
+</html>
